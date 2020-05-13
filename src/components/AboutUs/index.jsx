@@ -13,14 +13,20 @@ const AboutUs = () => {
                                 <img className="image" src="./avatar.png" alt="" />
                             </div>
                             <p className="name">Minh Thu</p>
-                            <p className="content">Lorem isum</p>
+                            <p className="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
                         </div>
                         <div className="profile">
                             <div className="avatar">
                                 <img className="image" src="./avatar.png" alt="" />
                             </div>
                             <p className="name">Thinh Tran</p>
-                            <p className="content">Lorem isum</p>
+                            <p className="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
                         </div>
                     </div>
                 </div>
