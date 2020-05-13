@@ -9,8 +9,7 @@ const Homepage = () => {
     const [isRecording, setIsRecording] = useState(false);
     const [preview, setPreview] = useState();
     const handleOnClick = () => {
-        if (!isRecording) startRecording();
-        else return isRecording ? stopRecording() : startRecording();
+        return isRecording ? stopRecording() : startRecording();
     };
 
     const startRecording = () => {
