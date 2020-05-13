@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <section className="hero is-light is-bold is-fullheight" id="about-us">
+        <section className="hero is-fullheight-with-navbar" id="about-us">
             <div className="hero-body">
                 <div className="container">
                     {/* <h1 className="title">Medium title</h1>

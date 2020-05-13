@@ -1,2 +1,14 @@
-.main-thesis {
+#homepage {
+    .container {
+        text-align: center;
+        .record-button {
+            width: 10rem;
+            height: 10rem;
+            margin: auto;
+            cursor: pointer;
+        }
+        .audio {
+            margin: 1rem auto;
+        }
+    }
 }

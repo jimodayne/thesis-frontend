@@ -8,8 +8,8 @@ import AboutUs from './components/AboutUs';
 const App = () => {
     return (
         <div className="main-thesis">
-            <Nav />
             <Router>
+                <Nav />
                 <Switch>
                     <Route exact path="/">
                         <Homepage />

@@ -1,17 +1,19 @@
 #about-us {
     .profiles {
-        margin-top: -5rem;
+        margin-top: -2rem;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
     .profile {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0 3rem;
-        .avatar {
-            width: 300px;
+        padding: 1rem 3rem;
 
+        .avatar {
+            width: 100%;
+            max-width: 300px;
             margin-bottom: 1rem;
             img {
                 border-radius: 50%;
@@ -19,8 +21,6 @@
         }
         .name {
             font-size: 2rem;
-        }
-        .content {
         }
     }
 }

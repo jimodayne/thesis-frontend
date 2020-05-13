@@ -45,20 +45,32 @@ const Homepage = () => {
     };
 
     return (
-        <div>
-            <button
-                className={`button is-${isRecording ? 'light' : 'black'}`}
-                onClick={handleOnClick}
-            >
-                {!isRecording ? 'Record' : 'Stop recording'}
-            </button>
-            {preview && (
-                <audio controls src={preview} style={{ marginBottom: '15px', display: 'block' }}>
-                    Your browser does not support the
-                    <code>audio</code> element.
-                </audio>
-            )}
-        </div>
+        <section className="section" id="homepage">
+            <div className="container">
+                <div className="record-button" onClick={handleOnClick}>
+                    <img className="" src="./mic_icon.svg" alt="mic-wrapper" />
+                </div>
+                {/* <button
+                            className={`button is-${isRecording ? 'light' : 'black'} `}
+                            onClick={handleOnClick}
+                            id="record-button"
+                        >
+                            {!isRecording ? 'Record' : 'Stop recording'}
+                        </button> */}
+
+                {preview && (
+                    <audio
+                        controls
+                        className="audio"
+                        src={preview}
+                        style={{ marginBottom: '15px', display: 'block' }}
+                    >
+                        Your browser does not support the
+                        <code>audio</code> element.
+                    </audio>
+                )}
+            </div>
+        </section>
     );
 };
 
