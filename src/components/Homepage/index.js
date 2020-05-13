@@ -46,7 +46,10 @@ const Homepage = () => {
 
     return (
         <div>
-            <button className="button is-primary" onClick={handleOnClick}>
+            <button
+                className={`button is-${isRecording ? 'light' : 'black'}`}
+                onClick={handleOnClick}
+            >
                 {!isRecording ? 'Record' : 'Stop recording'}
             </button>
             {preview && (
