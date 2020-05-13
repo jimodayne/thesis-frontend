@@ -1,6 +1,17 @@
-$text-color: #dedede;
+// 1. Impport font Lato
+// @import 'src/fonts/lato/stylesheet.css';
 
-.main-thesis {
-  text-align: center;
-  color: $text-color;
-}
+// 2. Custom variable
+@import "./variables.scss";
+
+// 3. Import UIkit
+@import "./bulma/_import.scss";
+
+// 4. Custom components
+@import "./components/_import";
+
+// 5. Custom scss
+@import "./homepage.scss";
+
+// 6. Custom responsive
+@import "./responsive.scss";
