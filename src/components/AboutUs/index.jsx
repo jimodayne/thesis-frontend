@@ -10,7 +10,7 @@ const AboutUs = () => {
                     <div className="profiles">
                         <div className="profile">
                             <div className="avatar">
-                                <img className="image" src="./avatar.png" alt="" />
+                                <img className="image" src="./ava_thu.jpg" alt="" />
                             </div>
                             <p className="name">Thu Tran</p>
                             <p className="content">
@@ -20,7 +20,7 @@ const AboutUs = () => {
                         </div>
                         <div className="profile">
                             <div className="avatar">
-                                <img className="image" src="./avatar.png" alt="" />
+                                <img className="image" src="./ava_jim.jpg" alt="" />
                             </div>
                             <p className="name">Thinh Tran</p>
                             <p className="content">

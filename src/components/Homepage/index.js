@@ -65,6 +65,10 @@ const Homepage = () => {
                         <code>audio</code> element.
                     </audio>
                 )}
+                <div className="result has-text-centered has-text-weight-semibold">
+                    <p>Result:</p>
+                    <p className="has-text-weight-normal">hahahahaahahah</p>
+                </div>
             </div>
         </section>
     );
