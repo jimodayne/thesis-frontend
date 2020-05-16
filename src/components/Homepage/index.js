@@ -46,17 +46,14 @@ const Homepage = () => {
     return (
         <section className="section" id="homepage">
             <div className="container">
-                <div className="record-button" onClick={handleOnClick}>
-                    <img className="" src="./mic_icon.svg" alt="mic-wrapper" />
+                <div className="record-button-container">
+                    <div
+                        className={'record-button ' + (isRecording ? 'is-recording' : '')}
+                        onClick={handleOnClick}
+                    >
+                        <img className="record-icon" src="./mic_icon.svg" alt="mic-wrapper" />
+                    </div>
                 </div>
-                {/* <button
-                            className={`button is-${isRecording ? 'light' : 'black'} `}
-                            onClick={handleOnClick}
-                            id="record-button"
-                        >
-                            {!isRecording ? 'Record' : 'Stop recording'}
-                        </button> */}
-
                 {preview && (
                     <audio
                         controls
