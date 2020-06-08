@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MicRecorder from 'mic-recorder-to-mp3';
 
 const recorder = new MicRecorder({
@@ -8,9 +8,13 @@ const recorder = new MicRecorder({
 const Homepage = () => {
     const [isRecording, setIsRecording] = useState(false);
     const [preview, setPreview] = useState();
+    const [response, setResponse] = useState('');
     const handleOnClick = () => {
         return isRecording ? stopRecording() : startRecording();
     };
+    const [file, setFile] = useState();
+
+    useEffect(() => {}, []);
 
     const startRecording = () => {
         recorder
@@ -23,6 +27,17 @@ const Homepage = () => {
             });
     };
 
+    useEffect(() => {}, []);
+
+    const onFileChange = event => {
+        // Update the state
+        setFile(event.target.files[0]);
+    };
+
+    const onFileUpload = () => {
+        console.log('file', file);
+    };
+
     const stopRecording = () => {
         recorder
             .stop()
@@ -33,6 +48,8 @@ const Homepage = () => {
                     type: blob.type,
                     lastModified: Date.now()
                 });
+
+                // sendFileToServer(blob);
 
                 const previewURL = URL.createObjectURL(file);
                 setPreview(previewURL);
@@ -54,6 +71,10 @@ const Homepage = () => {
                         <img className="record-icon" src="./mic_icon.svg" alt="mic-wrapper" />
                     </div>
                 </div>
+
+                <input type="file" onChange={onFileChange} />
+                <button onClick={onFileUpload}>Upload!</button>
+
                 {preview && (
                     <audio
                         controls
