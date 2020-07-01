@@ -5,8 +5,6 @@ const AboutUs = () => {
         <section className="hero is-fullheight-with-navbar" id="about-us">
             <div className="hero-body">
                 <div className="container">
-                    {/* <h1 className="title">Medium title</h1>
-                    <h2 className="subtitle">Medium subtitle</h2> */}
                     <div className="profiles">
                         <div className="profile">
                             <div className="avatar">

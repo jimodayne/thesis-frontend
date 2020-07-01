@@ -4,6 +4,7 @@ import './css/scss/main.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import AboutUs from './components/AboutUs';
+import AboutVDP from './components/AboutVDP';
 
 const App = () => {
     return (
@@ -17,8 +18,9 @@ const App = () => {
                     <Route exact path="/about-us">
                         <AboutUs />
                     </Route>
-                    {/* <Route exact path="/aboutus"></Route>
-          <Route exact path="/deepspeech"></Route> */}
+                    <Route exact path="/about-vdp">
+                        <AboutVDP />
+                    </Route>
                 </Switch>
             </Router>
         </div>

@@ -1,41 +1,100 @@
 #homepage {
+    display: flex;
+    min-height: 60vh;
     .container {
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        align-items: center;
+    }
+    .record-button-container {
+        background: linear-gradient(to right, red, purple);
+        padding: 3px;
+        width: 15rem;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-bottom: 1.563rem;
 
-        .record-button-container {
-            background: linear-gradient(to right, red, purple);
-            padding: 3px;
-            width: 15rem;
-            height: 15rem;
+        .record-button {
+            background-color: #fff;
+            width: 14.6rem;
+            height: 14.6rem;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: auto;
-            cursor: pointer;
-            border-radius: 50%;
-            margin-bottom: 1.563rem;
-
-            .record-button {
-                background-color: #fff;
-                width: 14.6rem;
-                height: 14.6rem;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .record-icon {
-                width: 10rem;
-                height: 10rem;
-            }
-            .is-recording {
-                box-shadow: 10px 10px 79px 0px rgba(114, 23, 153, 0.7);
-            }
         }
-        .audio {
-            margin: 1rem auto;
+        .record-icon {
+            width: 10rem;
+            height: 10rem;
+        }
+        .is-recording {
+            box-shadow: 10px 10px 79px 0px rgba(114, 23, 153, 0.7);
         }
     }
+    .audio {
+        margin: 1rem auto;
+    }
+
+    .dropzone {
+        width: 14.6rem;
+        height: 14.6rem;
+    }
+
+    .add_icon {
+        font-size: 4.1875rem;
+    }
+    .file_container {
+        margin-top: 30px;
+    }
+}
+.vertical_break {
+    border-right: 2px solid red;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: center;
+}
+.submit_btn_container {
+    background: linear-gradient(to right, red, purple);
+    padding: 3px;
+    width: 8rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.submit_btn {
+    background: linear-gradient(to right, red, purple);
+    width: 7.9rem;
+    height: 2.8rem;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+}
+.submit_btn:hover {
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+}
+.submit_btn:disabled {
+    cursor: not-allowed;
+}
+.no_click {
+    pointer-events: none;
+}
+.result {
+    margin-top: 15px;
 }

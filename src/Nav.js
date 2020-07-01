@@ -46,6 +46,13 @@ const Navbar = () => {
                         >
                             About us
                         </Link>
+                        <Link
+                            to="/about-vdp"
+                            className="navbar-item"
+                            onClick={() => setToggleBurger(!toggleBurger)}
+                        >
+                            VDP
+                        </Link>
                     </div>
                 </div>
             </div>
