@@ -72,6 +72,12 @@ const Homepage = () => {
         });
     };
 
+    const handleReset = () => {
+        setResult('');
+        setFile([]);
+        setPreview(null);
+    };
+
     return (
         <section className="section" id="homepage">
             <div className="container">
@@ -147,7 +153,7 @@ const Homepage = () => {
                 </div>
 
                 <div className="btn_container">
-                    <div className={'submit_btn_container'}>
+                    <div className="submit_btn_container">
                         <button
                             disabled={file.length === 0}
                             className="submit_btn"
@@ -156,8 +162,19 @@ const Homepage = () => {
                             Submit
                         </button>
                     </div>
+                    <div className="submit_btn_container">
+                        <button
+                            // disabled={file.length === 0}
+                            className="reset_btn"
+                            onClick={handleReset}
+                        >
+                            Reset
+                        </button>
+                    </div>
                 </div>
-                <div className="loading-wrapper">{isLoading && <Ring color="#be97e8" />}</div>
+                {isLoading && (
+                    <div className="loading-wrapper">{isLoading && <Ring color="#be97e8" />}</div>
+                )}
                 {result && (
                     <div className="result has-text-centered has-text-weight-semibold">
                         <div style={{ fontSize: '24px', marginBottom: '8px' }}>Result:</div>

@@ -13,6 +13,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
+                        to="/"
                         id="burgerMenu"
                         className={'navbar-burger burger ' + (toggleBurger ? 'is-active' : '')}
                         role="button"
