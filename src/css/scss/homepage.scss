@@ -67,6 +67,10 @@
     display: flex;
     justify-content: center;
 }
+.loading-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
 .submit_btn_container {
     background: linear-gradient(to right, red, purple);
     padding: 3px;
@@ -85,6 +89,7 @@
     height: 2.8rem;
     border-radius: 30px;
     display: flex;
+    outline: none;
     justify-content: center;
     align-items: center;
     border: none;
