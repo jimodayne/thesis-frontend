@@ -56,7 +56,7 @@ const Homepage = () => {
 
     const handleSubmit = async () => {
         const formData = new FormData();
-        console.log('file', file);
+
         formData.append('file', file, file.name);
         setLoading(true);
         fetch(API, {
@@ -90,17 +90,6 @@ const Homepage = () => {
                                 />
                             </button>
                         </div>
-                        {preview && (
-                            <audio
-                                controls
-                                className="audio"
-                                src={preview}
-                                style={{ marginBottom: '15px', display: 'block' }}
-                            >
-                                Your browser does not support the
-                                <code>audio</code> element.
-                            </audio>
-                        )}
                     </div>
                     <div className="column">
                         <div className="upload">
@@ -111,11 +100,17 @@ const Homepage = () => {
                                     // disabled={file.length > 0}
                                     onDrop={acceptedFile => {
                                         setFile(acceptedFile[0]);
+                                        const previewURL = URL.createObjectURL(acceptedFile[0]);
+                                        setPreview(previewURL);
+                                        console.log('previewURL', previewURL);
                                     }}
                                 >
                                     {({ getRootProps, getInputProps }) => (
                                         <div {...getRootProps()}>
-                                            <input {...getInputProps()} />
+                                            <input
+                                                {...getInputProps()}
+                                                style={{ outline: 'none', display: 'none' }}
+                                            />
                                             <div
                                                 variant="text"
                                                 className="record-button-container"
@@ -136,6 +131,19 @@ const Homepage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="audio-preview">
+                    {preview && (
+                        <audio
+                            controls
+                            className="audio"
+                            style={{ marginBottom: '15px', display: 'block' }}
+                        >
+                            <source src={preview} type="audio/ogg" />
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
+                    )}
                 </div>
 
                 <div className="btn_container">
