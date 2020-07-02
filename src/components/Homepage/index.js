@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import Dropzone from 'react-dropzone';
 import { Chip } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 const API = 'http://104.199.147.226:8000/';
 const recorder = new MicRecorder({
@@ -35,8 +35,7 @@ const Homepage = () => {
             .stop()
             .getMp3()
             .then(([buffer, blob]) => {
-                console.log(buffer, blob);
-                const file = new File(buffer, 'music.mp3', {
+                const file = new File(buffer, 'audio.wav', {
                     type: blob.type,
                     lastModified: Date.now()
                 });
@@ -44,6 +43,9 @@ const Homepage = () => {
                 const previewURL = URL.createObjectURL(file);
                 setPreview(previewURL);
                 setIsRecording(false);
+                setFile(file);
+
+                console.log('stopRecording -> file', file);
             })
             .catch(e => {
                 console.error(e);
@@ -51,16 +53,15 @@ const Homepage = () => {
     };
 
     const handleSubmit = async () => {
-        // const res = await fetch(API, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'text/html'
-        //         // mode: 'cors'
-        //     },
-        //     body: JSON.stringify(file)
-        // });
-        // console.log(res);
-        // return res.json();
+        const res = await fetch(API, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/html'
+            },
+            body: file
+        });
+        console.log(res);
+        return res.json();
     };
 
     return (
@@ -68,12 +69,13 @@ const Homepage = () => {
             <section className="section" id="homepage">
                 <div className="container">
                     <div className="record-button-container">
-                        <div
+                        <button
+                            // disabled={file.length > 0}
                             className={'record-button ' + (isRecording ? 'is-recording' : '')}
                             onClick={handleOnClick}
                         >
                             <img className="record-icon" src="./mic_icon.svg" alt="mic-wrapper" />
-                        </div>
+                        </button>
                     </div>
                     {preview && (
                         <audio
@@ -93,7 +95,7 @@ const Homepage = () => {
                         <Dropzone
                             accept={['.wav', '.mp3']}
                             multiple={false}
-                            disabled={file.length > 0}
+                            // disabled={file.length > 0}
                             onDrop={acceptedFile => setFile(acceptedFile)}
                         >
                             {({ getRootProps, getInputProps }) => (
@@ -105,7 +107,7 @@ const Homepage = () => {
                                         style={{ textTransform: 'none' }}
                                     >
                                         <div className="record-button">
-                                            <AddIcon className="add_icon" />
+                                            <AddBoxIcon className="add_icon" />
                                         </div>
                                     </div>
                                 </div>
