@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import MicRecorder from 'mic-recorder-to-mp3';
+import MicRecorder from 'mic-recorder';
 import Dropzone from 'react-dropzone';
 import { Chip } from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
 
 const API = 'http://104.199.147.226:8000/';
+
 const recorder = new MicRecorder({
-    bitRate: 128
+    bitRate: 128,
+    encoder: 'wav'
 });
 
 const Homepage = () => {
@@ -33,9 +35,10 @@ const Homepage = () => {
     };
 
     const stopRecording = () => {
+        handleReset();
         recorder
             .stop()
-            .getMp3()
+            .getAudio()
             .then(([buffer, blob]) => {
                 const file = new File(buffer, 'audio.wav', {
                     type: blob.type,
@@ -45,6 +48,7 @@ const Homepage = () => {
                 const previewURL = URL.createObjectURL(file);
                 setPreview(previewURL);
                 setIsRecording(false);
+
                 setFile(file);
 
                 console.log('stopRecording -> file', file);
@@ -101,7 +105,7 @@ const Homepage = () => {
                         <div className="upload">
                             <div className="dropzone">
                                 <Dropzone
-                                    accept={['.wav', '.mp3']}
+                                    accept={['.wav']}
                                     multiple={false}
                                     // disabled={file.length > 0}
                                     onDrop={acceptedFile => {
