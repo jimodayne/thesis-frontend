@@ -6,6 +6,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
 
 const API = 'http://104.199.147.226:8000/';
+const API_PROCESS = 'http://104.199.147.226:8001/';
 
 const recorder = new MicRecorder({
     bitRate: 128,
@@ -16,7 +17,8 @@ const Homepage = () => {
     const [isRecording, setIsRecording] = useState(false);
     const [preview, setPreview] = useState();
     const [file, setFile] = useState([]);
-    const [result, setResult] = useState(undefined);
+    const [result, setResult] = useState([]);
+    const [isAPIProcess, setAPI] = useState(false);
     const [isLoading, setLoading] = useState(false);
 
     const handleOnClick = () => {
@@ -36,6 +38,7 @@ const Homepage = () => {
 
     const stopRecording = () => {
         handleReset();
+
         recorder
             .stop()
             .getAudio()
@@ -60,10 +63,9 @@ const Homepage = () => {
 
     const handleSubmit = async () => {
         const formData = new FormData();
-
         formData.append('file', file, file.name);
         setLoading(true);
-        fetch(API, {
+        fetch(isAPIProcess ? API_PROCESS : API, {
             method: 'POST',
             body: formData
         }).then(res => {
@@ -76,6 +78,10 @@ const Homepage = () => {
         });
     };
 
+    const handlePreprocess = e => {
+        // console.log('e.target', e.target.checked);
+        setAPI(e.target.checked);
+    };
     const handleReset = () => {
         setResult('');
         setFile([]);
@@ -112,6 +118,7 @@ const Homepage = () => {
                                         setFile(acceptedFile[0]);
                                         const previewURL = URL.createObjectURL(acceptedFile[0]);
                                         setPreview(previewURL);
+
                                         console.log('previewURL', previewURL);
                                     }}
                                 >
@@ -155,6 +162,11 @@ const Homepage = () => {
                         </audio>
                     )}
                 </div>
+
+                <label className="checkbox">
+                    <input type="checkbox" onClick={handlePreprocess} />
+                    Preprocess
+                </label>
 
                 <div className="btn_container">
                     <div className="submit_btn_container">
