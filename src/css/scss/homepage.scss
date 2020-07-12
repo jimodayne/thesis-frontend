@@ -4,7 +4,12 @@
 #homepage {
     display: flex;
     height: 480px;
-
+    .checkbox {
+        margin-bottom: 10px;
+        input {
+            margin-right: 10px;
+        }
+    }
     .container {
         display: flex;
         flex-direction: column;
