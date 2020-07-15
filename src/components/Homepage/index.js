@@ -5,8 +5,8 @@ import { Chip } from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
 
-const API = 'http://104.199.147.226:8000/';
-const API_PROCESS = 'http://104.199.147.226:8001/';
+const API = 'https://104.199.147.226:8000/';
+const API_PROCESS = 'https://104.199.147.226:8001/';
 
 const recorder = new MicRecorder({
     bitRate: 128,
