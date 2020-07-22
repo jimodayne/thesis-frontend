@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import MicRecorder from 'mic-recorder';
+import React, { useState, useEffect } from 'react';
 import Dropzone from 'react-dropzone';
 import { Chip } from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
+import toWav from 'audiobuffer-to-wav';
 
 const API = 'https://104.199.147.226:8000/';
 const API_PROCESS = 'https://104.199.147.226:8001/';
 
-const recorder = new MicRecorder({
-    bitRate: 128,
-    encoder: 'wav'
-});
+let chunks = [];
+let mediaRecorder;
 
 const Homepage = () => {
     const [isRecording, setIsRecording] = useState(false);
@@ -21,44 +19,62 @@ const Homepage = () => {
     const [isAPIProcess, setAPI] = useState(false);
     const [isLoading, setLoading] = useState(false);
 
+    useEffect(() => {
+        (async () => {
+            if (navigator.getUserMedia) {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.ondataavailable = e => {
+                    if (e.data && e.data.size > 0) {
+                        chunks.push(e.data);
+                    }
+                };
+            } else {
+                console.log('Media Decives will work only with SSL.....');
+            }
+        })();
+    }, []);
+
     const handleOnClick = () => {
         return isRecording ? stopRecording() : startRecording();
     };
 
     const startRecording = () => {
-        recorder
-            .start()
-            .then(() => {
-                setIsRecording(true);
-            })
-            .catch(e => {
-                console.error(e);
-            });
+        handleReset();
+        setIsRecording(true);
+        mediaRecorder && mediaRecorder.start(10);
     };
 
     const stopRecording = () => {
-        handleReset();
+        setIsRecording(false);
+        mediaRecorder && mediaRecorder.stop();
+        saveAudio();
+    };
 
-        recorder
-            .stop()
-            .getAudio()
-            .then(([buffer, blob]) => {
-                const file = new File(buffer, 'audio.wav', {
-                    type: blob.type,
-                    lastModified: Date.now()
+    const convertBlobToAudioBuffer = myBlob => {
+        const audioContext = new AudioContext();
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            let myArrayBuffer = fileReader.result;
+            audioContext.decodeAudioData(myArrayBuffer, audioBuffer => {
+                // Do something with audioBuffer
+                const wav = toWav(audioBuffer);
+                const blob = new Blob([new DataView(wav)], {
+                    type: 'audio/wav'
                 });
+                const audioURL = URL.createObjectURL(blob);
+                setPreview(audioURL);
 
-                const previewURL = URL.createObjectURL(file);
-                setPreview(previewURL);
-                setIsRecording(false);
-
-                setFile(file);
-
-                console.log('stopRecording -> file', file);
-            })
-            .catch(e => {
-                console.error(e);
+                setFile(blob);
             });
+        };
+        //Load blob
+        fileReader.readAsArrayBuffer(myBlob);
+    };
+    const saveAudio = () => {
+        const blob = new Blob(chunks, { type: 'audio/webm' });
+        console.log('blob', blob);
+        convertBlobToAudioBuffer(blob);
     };
 
     const handleSubmit = async () => {
@@ -79,13 +95,13 @@ const Homepage = () => {
     };
 
     const handlePreprocess = e => {
-        // console.log('e.target', e.target.checked);
         setAPI(e.target.checked);
     };
     const handleReset = () => {
         setResult('');
         setFile([]);
         setPreview(null);
+        chunks = [];
     };
 
     return (
@@ -116,6 +132,7 @@ const Homepage = () => {
                                     // disabled={file.length > 0}
                                     onDrop={acceptedFile => {
                                         setFile(acceptedFile[0]);
+                                        console.log('acceptedFile[0]', acceptedFile[0]);
                                         const previewURL = URL.createObjectURL(acceptedFile[0]);
                                         setPreview(previewURL);
 
