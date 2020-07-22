@@ -24,7 +24,6 @@ const Homepage = () => {
             if (navigator.getUserMedia) {
                 const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
                 mediaRecorder = new MediaRecorder(stream);
-
                 mediaRecorder.ondataavailable = e => {
                     if (e.data && e.data.size > 0) {
                         chunks.push(e.data);
@@ -55,10 +54,8 @@ const Homepage = () => {
     const convertBlobToAudioBuffer = myBlob => {
         const audioContext = new AudioContext();
         const fileReader = new FileReader();
-
         fileReader.onloadend = () => {
             let myArrayBuffer = fileReader.result;
-
             audioContext.decodeAudioData(myArrayBuffer, audioBuffer => {
                 // Do something with audioBuffer
                 const wav = toWav(audioBuffer);
@@ -71,14 +68,12 @@ const Homepage = () => {
                 setFile(blob);
             });
         };
-
         //Load blob
         fileReader.readAsArrayBuffer(myBlob);
     };
     const saveAudio = () => {
         const blob = new Blob(chunks, { type: 'audio/webm' });
         console.log('blob', blob);
-
         convertBlobToAudioBuffer(blob);
     };
 
@@ -100,7 +95,6 @@ const Homepage = () => {
     };
 
     const handlePreprocess = e => {
-        // console.log('e.target', e.target.checked);
         setAPI(e.target.checked);
     };
     const handleReset = () => {
