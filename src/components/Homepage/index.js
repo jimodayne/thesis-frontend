@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import MicRecorder from 'mic-recorder';
 import Dropzone from 'react-dropzone';
 import { Chip } from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
+import toWav from 'audiobuffer-to-wav';
 
 const API = 'https://104.199.147.226:8000/';
 const API_PROCESS = 'https://104.199.147.226:8001/';
@@ -41,27 +41,45 @@ const Homepage = () => {
     };
 
     const startRecording = () => {
-        chunks = [];
+        handleReset();
         setIsRecording(true);
-
         mediaRecorder && mediaRecorder.start(10);
     };
 
     const stopRecording = () => {
         setIsRecording(false);
-
         mediaRecorder && mediaRecorder.stop();
-
         saveAudio();
-        // handleReset();
     };
 
+    const convertBlobToAudioBuffer = myBlob => {
+        const audioContext = new AudioContext();
+        const fileReader = new FileReader();
+
+        fileReader.onloadend = () => {
+            let myArrayBuffer = fileReader.result;
+
+            audioContext.decodeAudioData(myArrayBuffer, audioBuffer => {
+                // Do something with audioBuffer
+                const wav = toWav(audioBuffer);
+                const blob = new Blob([new DataView(wav)], {
+                    type: 'audio/wav'
+                });
+                const audioURL = URL.createObjectURL(blob);
+                setPreview(audioURL);
+
+                setFile(blob);
+            });
+        };
+
+        //Load blob
+        fileReader.readAsArrayBuffer(myBlob);
+    };
     const saveAudio = () => {
-        const blob = new Blob(chunks, { type: 'audio/wav; codecs=0' });
+        const blob = new Blob(chunks, { type: 'audio/webm' });
         console.log('blob', blob);
-        const audioURL = URL.createObjectURL(blob);
-        setPreview(audioURL);
-        setFile(blob);
+
+        convertBlobToAudioBuffer(blob);
     };
 
     const handleSubmit = async () => {
@@ -89,6 +107,7 @@ const Homepage = () => {
         setResult('');
         setFile([]);
         setPreview(null);
+        chunks = [];
     };
 
     return (
