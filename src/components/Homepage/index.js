@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import MicRecorder from 'mic-recorder';
+import React, { useState, useEffect } from 'react';
+// import MicRecorder from 'mic-recorder';
 import Dropzone from 'react-dropzone';
 import { Chip } from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
@@ -8,10 +8,8 @@ import { Ring } from 'react-spinners-css';
 const API = 'https://104.199.147.226:8000/';
 const API_PROCESS = 'https://104.199.147.226:8001/';
 
-const recorder = new MicRecorder({
-    bitRate: 128,
-    encoder: 'wav'
-});
+let chunks = [];
+let mediaRecorder;
 
 const Homepage = () => {
     const [isRecording, setIsRecording] = useState(false);
@@ -21,44 +19,49 @@ const Homepage = () => {
     const [isAPIProcess, setAPI] = useState(false);
     const [isLoading, setLoading] = useState(false);
 
+    useEffect(() => {
+        (async () => {
+            if (navigator.getUserMedia) {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = e => {
+                    if (e.data && e.data.size > 0) {
+                        chunks.push(e.data);
+                    }
+                };
+            } else {
+                console.log('Media Decives will work only with SSL.....');
+            }
+        })();
+    }, []);
+
     const handleOnClick = () => {
         return isRecording ? stopRecording() : startRecording();
     };
 
     const startRecording = () => {
-        recorder
-            .start()
-            .then(() => {
-                setIsRecording(true);
-            })
-            .catch(e => {
-                console.error(e);
-            });
+        chunks = [];
+        setIsRecording(true);
+
+        mediaRecorder && mediaRecorder.start(10);
     };
 
     const stopRecording = () => {
-        handleReset();
+        setIsRecording(false);
 
-        recorder
-            .stop()
-            .getAudio()
-            .then(([buffer, blob]) => {
-                const file = new File(buffer, 'audio.wav', {
-                    type: blob.type,
-                    lastModified: Date.now()
-                });
+        mediaRecorder && mediaRecorder.stop();
 
-                const previewURL = URL.createObjectURL(file);
-                setPreview(previewURL);
-                setIsRecording(false);
+        saveAudio();
+        // handleReset();
+    };
 
-                setFile(file);
-
-                console.log('stopRecording -> file', file);
-            })
-            .catch(e => {
-                console.error(e);
-            });
+    const saveAudio = () => {
+        const blob = new Blob(chunks, { type: 'audio/wav; codecs=0' });
+        console.log('blob', blob);
+        const audioURL = URL.createObjectURL(blob);
+        setPreview(audioURL);
+        setFile(blob);
     };
 
     const handleSubmit = async () => {
@@ -116,6 +119,7 @@ const Homepage = () => {
                                     // disabled={file.length > 0}
                                     onDrop={acceptedFile => {
                                         setFile(acceptedFile[0]);
+                                        console.log('acceptedFile[0]', acceptedFile[0]);
                                         const previewURL = URL.createObjectURL(acceptedFile[0]);
                                         setPreview(previewURL);
 
