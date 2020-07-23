@@ -8,7 +8,11 @@ const AboutUs = () => {
                     <div className="profiles">
                         <div className="profile">
                             <div className="avatar">
-                                <img className="image" src="./ava_thu.jpg" alt="" />
+                                <img
+                                    className="image"
+                                    src="https://storage.googleapis.com/dataset-nlp-dp2-1/static/ava_thu.jpg"
+                                    alt=""
+                                />
                             </div>
                             <p className="name">Thu Tran</p>
                             <p className="content">
@@ -19,7 +23,11 @@ const AboutUs = () => {
                         </div>
                         <div className="profile">
                             <div className="avatar">
-                                <img className="image" src="./ava_jim.jpg" alt="" />
+                                <img
+                                    className="image"
+                                    src="https://storage.googleapis.com/dataset-nlp-dp2-1/static/ava_jim.jpg"
+                                    alt=""
+                                />
                             </div>
                             <p className="name">Thinh Tran</p>
                             <p className="content">
