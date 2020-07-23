@@ -15,10 +15,10 @@ const App = () => {
                     <Route exact path={['/home', '/', '/thesis-frontend']}>
                         <AboutVDP />
                     </Route>
-                    <Route exact path="/about-us">
+                    <Route exact path={['/about-us', '/thesis-frontend/about-us']}>
                         <AboutUs />
                     </Route>
-                    <Route exact path="/demo">
+                    <Route exact path={['/demo', '/thesis-frontend/demo']}>
                         <Homepage />
                     </Route>
                 </Switch>

@@ -118,7 +118,7 @@ const Homepage = () => {
                             >
                                 <img
                                     className="record-icon"
-                                    src="./mic_icon.svg"
+                                    src="https://storage.googleapis.com/dataset-nlp-dp2-1/static/mic_icon.svg"
                                     alt="mic-wrapper"
                                 />
                             </button>
