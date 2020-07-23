@@ -47,13 +47,13 @@ const Navbar = () => {
                         >
                             About us
                         </Link>
-                        {/* <Link
+                        <Link
                             to="/demo"
                             className="navbar-item"
                             onClick={() => setToggleBurger(!toggleBurger)}
                         >
                             Demo
-                        </Link> */}
+                        </Link>
                     </div>
                 </div>
             </div>
