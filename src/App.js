@@ -12,7 +12,7 @@ const App = () => {
             <Router>
                 <Nav />
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path={['/home', '/', '/thesis-frontend']}>
                         <AboutVDP />
                     </Route>
                     <Route exact path="/about-us">
