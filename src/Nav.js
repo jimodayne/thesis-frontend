@@ -8,9 +8,9 @@ const Navbar = () => {
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="container">
                 <div className="navbar-brand">
-                    <Link className="navbar-item" to="/">
+                    {/* <Link className="navbar-item" to="/">
                         <p className="logo-text">LOGO</p>
-                    </Link>
+                    </Link> */}
 
                     <Link
                         to="/"
@@ -47,13 +47,13 @@ const Navbar = () => {
                         >
                             About us
                         </Link>
-                        <Link
-                            to="/about-thesis"
+                        {/* <Link
+                            to="/demo"
                             className="navbar-item"
                             onClick={() => setToggleBurger(!toggleBurger)}
                         >
-                            Thesis
-                        </Link>
+                            Demo
+                        </Link> */}
                     </div>
                 </div>
             </div>

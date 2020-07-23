@@ -30,14 +30,14 @@ const AboutVDP = () => {
                         We wish to express our appreciation to all of our faculty lecturers, without
                         whom we would not have the necessary knowledge to finish our project. Later,
                         when equipped with precious expertise from this university, we will be
-                        confidently head into our future and be phenomenal.
+                        confidently heading into our future and be phenomenal.
                     </p>
                     <p className="content">
                         We also wish to acknowledge the support from our family and friends (Dũng,
                         Toàn, Như, Duy, ...), for they always stand by us
                     </p>
                     <p className="content">
-                        Despise our commitment, we are aware that this project is still inadequate
+                        Despite our commitment, we are aware that this project is still inadequate
                         and contains inevitable errors. We would love to receive feedback from
                         lecturers in order to improve furthermore.
                     </p>

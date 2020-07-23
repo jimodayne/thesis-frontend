@@ -24,8 +24,8 @@ const AboutUs = () => {
                             <p className="name">Thinh Tran</p>
                             <p className="content">
                                 A fourth year student majoring in Computer Science. Logical but
-                                creative thinker. Have the ability to adapt, adjust, and advance in
-                                various environments.
+                                creative thinker. Possess adequate knowledge about media and
+                                technical related skills.
                             </p>
                         </div>
                     </div>

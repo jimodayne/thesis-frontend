@@ -16,7 +16,7 @@ const Homepage = () => {
     const [preview, setPreview] = useState();
     const [file, setFile] = useState([]);
     const [result, setResult] = useState(undefined);
-    const [isAPIProcess, setAPI] = useState(false);
+    const [isAPIProcess, setAPI] = useState(true);
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -183,7 +183,11 @@ const Homepage = () => {
                 </div>
 
                 <label className="checkbox">
-                    <input type="checkbox" onClick={handlePreprocess} />
+                    <input
+                        type="checkbox"
+                        onClick={handlePreprocess}
+                        defaultChecked={isAPIProcess}
+                    />
                     Preprocess
                 </label>
 

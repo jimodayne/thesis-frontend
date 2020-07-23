@@ -1,6 +1,6 @@
 #about-us {
     .profiles {
-        margin-top: -2rem;
+        margin-top: -4rem;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -21,6 +21,7 @@
         }
         .name {
             font-size: 2rem;
+            font-weight: 500;
         }
         .content {
             max-width: 320px;
