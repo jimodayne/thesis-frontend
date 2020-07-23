@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/thesis-frontend/static/css/main.17772b90.chunk.css",
-    "main.js": "/thesis-frontend/static/js/main.0b026a8c.chunk.js",
-    "main.js.map": "/thesis-frontend/static/js/main.0b026a8c.chunk.js.map",
+    "main.js": "/thesis-frontend/static/js/main.4b87ea48.chunk.js",
+    "main.js.map": "/thesis-frontend/static/js/main.4b87ea48.chunk.js.map",
     "runtime-main.js": "/thesis-frontend/static/js/runtime-main.427891c1.js",
     "runtime-main.js.map": "/thesis-frontend/static/js/runtime-main.427891c1.js.map",
     "static/css/2.079ed09a.chunk.css": "/thesis-frontend/static/css/2.079ed09a.chunk.css",
     "static/js/2.32fd976e.chunk.js": "/thesis-frontend/static/js/2.32fd976e.chunk.js",
     "static/js/2.32fd976e.chunk.js.map": "/thesis-frontend/static/js/2.32fd976e.chunk.js.map",
     "index.html": "/thesis-frontend/index.html",
-    "precache-manifest.80714774bad28c9a2539069eaf7f543c.js": "/thesis-frontend/precache-manifest.80714774bad28c9a2539069eaf7f543c.js",
+    "precache-manifest.7a52428a181c132a3602d9dcc48cbf14.js": "/thesis-frontend/precache-manifest.7a52428a181c132a3602d9dcc48cbf14.js",
     "service-worker.js": "/thesis-frontend/service-worker.js",
     "static/css/2.079ed09a.chunk.css.map": "/thesis-frontend/static/css/2.079ed09a.chunk.css.map",
     "static/css/main.17772b90.chunk.css.map": "/thesis-frontend/static/css/main.17772b90.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.079ed09a.chunk.css",
     "static/js/2.32fd976e.chunk.js",
     "static/css/main.17772b90.chunk.css",
-    "static/js/main.0b026a8c.chunk.js"
+    "static/js/main.4b87ea48.chunk.js"
   ]
 }
