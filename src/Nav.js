@@ -48,11 +48,11 @@ const Navbar = () => {
                             About us
                         </Link>
                         <Link
-                            to="/about-vdp"
+                            to="/about-thesis"
                             className="navbar-item"
                             onClick={() => setToggleBurger(!toggleBurger)}
                         >
-                            VDP
+                            Thesis
                         </Link>
                     </div>
                 </div>

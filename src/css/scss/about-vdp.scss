@@ -1,12 +1,16 @@
-.container {
-    // display: flex;
-    // justify-content: center;
-    text-align: center;
-
-    .title {
-        font-size: 1.5rem;
+#about-project {
+    .container {
+        margin-top: 2rem;
     }
+
     .subtitle {
-        font-size: 1.3rem;
+        font-size: 1rem;
+        color: #888;
+    }
+    .content:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+    header {
+        margin-bottom: 0.5rem;
     }
 }

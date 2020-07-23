@@ -12,8 +12,9 @@ const AboutUs = () => {
                             </div>
                             <p className="name">Thu Tran</p>
                             <p className="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                My dream since childhood is to change the world. Now, as a wannabe
+                                adult, I'm trying to learn and improve myself as much as I can.
+                                Because baby steps count, right?
                             </p>
                         </div>
                         <div className="profile">
@@ -22,8 +23,9 @@ const AboutUs = () => {
                             </div>
                             <p className="name">Thinh Tran</p>
                             <p className="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                A fourth year student majoring in Computer Science. Logical but
+                                creative thinker. Have the ability to adapt, adjust, and advance in
+                                various environments.
                             </p>
                         </div>
                     </div>

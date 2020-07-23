@@ -18,7 +18,7 @@ const App = () => {
                     <Route exact path="/about-us">
                         <AboutUs />
                     </Route>
-                    <Route exact path="/about-vdp">
+                    <Route exact path="/about-thesis">
                         <AboutVDP />
                     </Route>
                 </Switch>

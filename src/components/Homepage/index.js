@@ -15,7 +15,7 @@ const Homepage = () => {
     const [isRecording, setIsRecording] = useState(false);
     const [preview, setPreview] = useState();
     const [file, setFile] = useState([]);
-    const [result, setResult] = useState([]);
+    const [result, setResult] = useState(undefined);
     const [isAPIProcess, setAPI] = useState(false);
     const [isLoading, setLoading] = useState(false);
 
@@ -101,6 +101,7 @@ const Homepage = () => {
         setResult('');
         setFile([]);
         setPreview(null);
+        setLoading(false);
         chunks = [];
     };
 
@@ -131,6 +132,7 @@ const Homepage = () => {
                                     multiple={false}
                                     // disabled={file.length > 0}
                                     onDrop={acceptedFile => {
+                                        handleReset();
                                         setFile(acceptedFile[0]);
                                         console.log('acceptedFile[0]', acceptedFile[0]);
                                         const previewURL = URL.createObjectURL(acceptedFile[0]);
@@ -211,8 +213,12 @@ const Homepage = () => {
                 {result && (
                     <div className="result has-text-centered has-text-weight-semibold">
                         <div style={{ fontSize: '24px', marginBottom: '8px' }}>Result:</div>
-
-                        <div className="has-text-weight-normal">{result}</div>
+                        <div className="has-text-weight-normal is-uppercase is-size-5">
+                            Predict: {result.predict}
+                        </div>
+                        <div className="has-text-weight-normal is-uppercase is-size-5">
+                            Correct: {result.correct}
+                        </div>
                     </div>
                 )}
             </div>
