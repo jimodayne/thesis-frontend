@@ -7,8 +7,8 @@ const AboutVDP = () => {
                 <section className="section">
                     <header>
                         <h1 className="title is-1 has-text-weight-bold">
-                            Combination of voice recognition and languagemodel for an end-to-end
-                            Vietnamese speechrecognition
+                            Combination of voice recognition and language model for an end-to-end
+                            Vietnamese speech recognition
                         </h1>
                         <p className="subtitle meta">
                             Students: Tran Ngoc Minh Thu - 1652599, Tran Duc Thinh - 1652578
