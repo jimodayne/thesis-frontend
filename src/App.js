@@ -1,7 +1,8 @@
 import React from 'react';
 import Nav from './Nav';
 import './css/scss/main.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import AboutUs from './components/AboutUs';
 import AboutVDP from './components/AboutVDP';
@@ -9,20 +10,12 @@ import AboutVDP from './components/AboutVDP';
 const App = () => {
     return (
         <div className="main-thesis">
-            <Router>
+            <HashRouter basename="/">
                 <Nav />
-                <Switch>
-                    <Route exact path={['/home', '/', '/thesis-frontend']}>
-                        <AboutVDP />
-                    </Route>
-                    <Route exact path={['/about-us', '/thesis-frontend/about-us']}>
-                        <AboutUs />
-                    </Route>
-                    <Route exact path={['/demo', '/thesis-frontend/demo']}>
-                        <Homepage />
-                    </Route>
-                </Switch>
-            </Router>
+                <Route exact path="/" component={AboutVDP} />
+                <Route exact path="/about-us" component={AboutUs} />
+                <Route exact path="/demo" component={Homepage} />
+            </HashRouter>
         </div>
     );
 };
