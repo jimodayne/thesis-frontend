@@ -6,7 +6,7 @@ const AboutVDP = () => {
             <div className="container">
                 <section className="section">
                     <header>
-                        <h1 class="title is-1 has-text-weight-bold">
+                        <h1 className="title is-1 has-text-weight-bold">
                             Combination of voice recognition and languagemodel for an end-to-end
                             Vietnamese speechrecognition
                         </h1>
@@ -18,7 +18,7 @@ const AboutVDP = () => {
                 </section>
                 <section className="section">
                     <header>
-                        <h3 class="title is-3">Acknowledgement</h3>
+                        <h3 className="title is-3">Acknowledgement</h3>
                     </header>
                     <p className="content">
                         We would love to show our deep and honest gratitude to Assoc. Prof. Quản
@@ -46,7 +46,7 @@ const AboutVDP = () => {
                     </p>
                 </section>
                 <section className="section">
-                    <h3 class="title is-3">Abstract</h3>
+                    <h3 className="title is-3">Abstract</h3>
                     <p className="content">
                         The speech to text problem is not uncommon, since automatic speech
                         recognition is an important feature in the modern world. There are some
@@ -61,7 +61,7 @@ const AboutVDP = () => {
                 </section>
 
                 <section className="section">
-                    <h3 class="title is-3">Introduction</h3>
+                    <h3 className="title is-3">Introduction</h3>
                     <p className="content">
                         Our university has very active and energetic extracurricular activities. The
                         activities are usually organized by a group of students. They handle, inform
@@ -85,7 +85,7 @@ const AboutVDP = () => {
                 </section>
 
                 <section className="section">
-                    <h3 class="title is-3">Voice recognizer</h3>
+                    <h3 className="title is-3">Voice recognizer</h3>
                     <p className="content">
                         Based on Deep Speech 2, our Voice Recognizer has the following architecture:
                         2 layers of CNN, 2 layers of bidirectional RNN with LSTM and hidden layer
@@ -97,7 +97,7 @@ const AboutVDP = () => {
                     </p>
                 </section>
                 <section className="section">
-                    <h3 class="title is-3">Language model</h3>
+                    <h3 className="title is-3">Language model</h3>
                     <p className="content">
                         In order to produce the most correct transcript out of the user’s audio
                         input, we use Language Model. A statistical language model is a probability
@@ -108,6 +108,121 @@ const AboutVDP = () => {
                         Right2Left model.
                     </p>
                 </section>
+                <section className="section">
+                    <h3 className="title is-3">Our data</h3>
+                    <p className="content">
+                        We recorded about 1500 audio files based on scripts of students asking for
+                        information about extracurricular activities. In total, it is approximately
+                        2 hours. After the augmentation, including adding noise, changing speed,
+                        adding padding, we have around 10 hours in total.
+                    </p>
+                </section>
+                <section className="section">
+                    <h3 className="title is-3">Result</h3>
+                    <p className="content">
+                        Result for testing untrained audio files that were recorded in a complete
+                        different environment and going through the Language Model
+                    </p>
+                    <div className="row">
+                        <div className="content">
+                            Example result:
+                            <ul>
+                                <li>
+                                    <b>Ground truth:</b> CHO MÌNH HỎI CHÚT VỀ TIẾP SỨC MÙA THI VỚ
+                                </li>
+                                <li>
+                                    <b>From Voice recognition system</b> CHO MÌNH HỎI CHÚT VỀ TẾP
+                                    SỨC TÙA THIN VỚI
+                                </li>
+                                <li>
+                                    <b>After Language model:</b> CHO MÌNH HỎI CHÚT VỀ TIẾP SỨC MÙA
+                                    THI VỚI
+                                </li>
+                            </ul>
+                        </div>
+
+                        <table className="table is-bordered  is-narrow">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Without LM</th>
+                                    <th>Apply LM</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Word Error Rate</th>
+                                    <td>0.33207</td>
+                                    <td>0.17601</td>
+                                </tr>
+                                <tr>
+                                    <th>Character Error Rate</th>
+                                    <td>0.13199</td>
+                                    <td>0.11574</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p className="content">
+                        We also have a workable ASR system that can be used to ask for university
+                        extracurricular activities.
+                    </p>
+                </section>
+                <div className="flex-wrapper">
+                    <section className="section section--evaluation">
+                        <h3 className="title is-3">Evaluation</h3>
+                        <div className="content">
+                            <ul>
+                                <li className="mt-1">
+                                    <p>
+                                        <b>Achievements:</b> We have learned many new things and
+                                        gained a lot of experience while doing this thesis
+                                    </p>
+                                    <ul>
+                                        <li>The ability to collect and self-generate data</li>
+                                        <li>
+                                            The implementation of Deep Speech 2 model for Vietnamese
+                                            transcription
+                                        </li>
+                                        <li>
+                                            Achievements in experiences, knowledge, and soft skill
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="mt-1">
+                                    <p>
+                                        <b>Drawbacks:</b> We are aware that this project still
+                                        contains inevitable errors. We would love to receive
+                                        feedback in order to improve furthermore
+                                    </p>
+                                    <ul>
+                                        <li> Data limitation</li>
+                                        <li>Lack of computing capability</li>
+                                        <li> Time constraint</li>
+                                    </ul>
+                                </li>
+                                <li className="mt-1 is-width-81">
+                                    <p>
+                                        <b>Future improvements:</b> With just a small amount of self
+                                        generating data, the model showed promising results within
+                                        our scope. So the Vietnamese ASR can certainly be improved
+                                        in the future
+                                    </p>
+                                    <ul>
+                                        <li>Collect and generate more data</li>
+                                        <li>
+                                            Tuning the model with different configurations for
+                                            observation, hence being able to pick the most efficient
+                                            model
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div className="figure-wrapper"></div>
             </div>
         </div>
     );

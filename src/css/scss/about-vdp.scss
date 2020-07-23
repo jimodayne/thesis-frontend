@@ -1,4 +1,6 @@
 #about-project {
+    position: relative;
+    padding-bottom: 3rem;
     .container {
         margin-top: 2rem;
     }
@@ -12,5 +14,64 @@
     }
     header {
         margin-bottom: 0.5rem;
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .table {
+        th {
+            font-weight: 600;
+        }
+    }
+    b {
+        font-weight: bold;
+    }
+    .mt-1 {
+        margin-top: 1rem;
+        p {
+            margin-bottom: 0.25em;
+        }
+    }
+    .is-width-81 {
+        width: 81%;
+    }
+    .figure-wrapper {
+        background-image: url('/undraw_Mobile_life_re_jtih.svg');
+        background-repeat: no-repeat;
+        width: 24%;
+        height: 18.5vw;
+        z-index: -2;
+        position: absolute;
+        bottom: -2rem;
+        right: -1rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #about-project {
+        .container {
+            margin-top: initial;
+        }
+        .section--evaluation {
+            width: 100%;
+            float: initial;
+        }
+        .figure-wrapper {
+            position: initial;
+            margin: 1rem auto;
+
+            width: 57.4vw;
+            height: 47vw;
+        }
+        .is-width-81 {
+            width: 100%;
+        }
+        .title.is-1 {
+            font-size: 2rem;
+        }
+        .subtitle {
+            margin-top: -1rem;
+        }
     }
 }
