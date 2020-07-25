@@ -131,7 +131,7 @@ const AboutVDP = () => {
                                     <b>Ground truth:</b> CHO MÌNH HỎI CHÚT VỀ TIẾP SỨC MÙA THI VỚ
                                 </li>
                                 <li>
-                                    <b>From Voice recognition system</b> CHO MÌNH HỎI CHÚT VỀ TẾP
+                                    <b>From Voice recognition system:</b> CHO MÌNH HỎI CHÚT VỀ TẾP
                                     SỨC TÙA THIN VỚI
                                 </li>
                                 <li>
