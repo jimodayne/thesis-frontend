@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/thesis-frontend/static/css/main.02c985fa.chunk.css",
-    "main.js": "/thesis-frontend/static/js/main.b774bf47.chunk.js",
-    "main.js.map": "/thesis-frontend/static/js/main.b774bf47.chunk.js.map",
+    "main.css": "/thesis-frontend/static/css/main.6234f395.chunk.css",
+    "main.js": "/thesis-frontend/static/js/main.ba28748a.chunk.js",
+    "main.js.map": "/thesis-frontend/static/js/main.ba28748a.chunk.js.map",
     "runtime-main.js": "/thesis-frontend/static/js/runtime-main.427891c1.js",
     "runtime-main.js.map": "/thesis-frontend/static/js/runtime-main.427891c1.js.map",
-    "static/css/2.19af2de1.chunk.css": "/thesis-frontend/static/css/2.19af2de1.chunk.css",
-    "static/js/2.64166058.chunk.js": "/thesis-frontend/static/js/2.64166058.chunk.js",
-    "static/js/2.64166058.chunk.js.map": "/thesis-frontend/static/js/2.64166058.chunk.js.map",
+    "static/css/2.079ed09a.chunk.css": "/thesis-frontend/static/css/2.079ed09a.chunk.css",
+    "static/js/2.5ba40000.chunk.js": "/thesis-frontend/static/js/2.5ba40000.chunk.js",
+    "static/js/2.5ba40000.chunk.js.map": "/thesis-frontend/static/js/2.5ba40000.chunk.js.map",
     "index.html": "/thesis-frontend/index.html",
-    "precache-manifest.19c4cdc1bbce1761277d32d652f3183e.js": "/thesis-frontend/precache-manifest.19c4cdc1bbce1761277d32d652f3183e.js",
+    "precache-manifest.f9c81c31e2caa993b27c780e4afdba5a.js": "/thesis-frontend/precache-manifest.f9c81c31e2caa993b27c780e4afdba5a.js",
     "service-worker.js": "/thesis-frontend/service-worker.js",
-    "static/css/2.19af2de1.chunk.css.map": "/thesis-frontend/static/css/2.19af2de1.chunk.css.map",
-    "static/css/main.02c985fa.chunk.css.map": "/thesis-frontend/static/css/main.02c985fa.chunk.css.map",
-    "static/js/2.64166058.chunk.js.LICENSE.txt": "/thesis-frontend/static/js/2.64166058.chunk.js.LICENSE.txt"
+    "static/css/2.079ed09a.chunk.css.map": "/thesis-frontend/static/css/2.079ed09a.chunk.css.map",
+    "static/css/main.6234f395.chunk.css.map": "/thesis-frontend/static/css/main.6234f395.chunk.css.map",
+    "static/js/2.5ba40000.chunk.js.LICENSE.txt": "/thesis-frontend/static/js/2.5ba40000.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.427891c1.js",
-    "static/css/2.19af2de1.chunk.css",
-    "static/js/2.64166058.chunk.js",
-    "static/css/main.02c985fa.chunk.css",
-    "static/js/main.b774bf47.chunk.js"
+    "static/css/2.079ed09a.chunk.css",
+    "static/js/2.5ba40000.chunk.js",
+    "static/css/main.6234f395.chunk.css",
+    "static/js/main.ba28748a.chunk.js"
   ]
 }
