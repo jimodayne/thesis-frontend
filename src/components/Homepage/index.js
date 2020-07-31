@@ -5,7 +5,6 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
 import toWav from 'audiobuffer-to-wav';
 
-const API = 'https://104.199.147.226:8000/';
 const API_PROCESS = 'https://104.199.147.226:8001/';
 
 let chunks = [];
@@ -16,7 +15,6 @@ const Homepage = () => {
     const [preview, setPreview] = useState();
     const [file, setFile] = useState([]);
     const [result, setResult] = useState(undefined);
-    const [isAPIProcess, setAPI] = useState(true);
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -81,7 +79,7 @@ const Homepage = () => {
         const formData = new FormData();
         formData.append('file', file, file.name);
         setLoading(true);
-        fetch(isAPIProcess ? API_PROCESS : API, {
+        fetch(API_PROCESS, {
             method: 'POST',
             body: formData
         }).then(res => {
@@ -94,9 +92,6 @@ const Homepage = () => {
         });
     };
 
-    const handlePreprocess = e => {
-        setAPI(e.target.checked);
-    };
     const handleReset = () => {
         setResult('');
         setFile([]);
@@ -181,15 +176,6 @@ const Homepage = () => {
                         </audio>
                     )}
                 </div>
-
-                <label className="checkbox">
-                    <input
-                        type="checkbox"
-                        onClick={handlePreprocess}
-                        defaultChecked={isAPIProcess}
-                    />
-                    Preprocess
-                </label>
 
                 <div className="btn_container">
                     <div className="submit_btn_container">
