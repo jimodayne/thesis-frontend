@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a7f623906cd842d7734952b15caa25cb",
+    "revision": "b2a257e427b4fb8bc944f5ab2bcf9caf",
     "url": "/thesis-frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/thesis-frontend/static/css/2.079ed09a.chunk.css"
   },
   {
-    "revision": "a2001391a45c993fac37",
+    "revision": "ad6a506025e394ed38a5",
     "url": "/thesis-frontend/static/css/main.6234f395.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/thesis-frontend/static/js/2.5ba40000.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a2001391a45c993fac37",
-    "url": "/thesis-frontend/static/js/main.ba28748a.chunk.js"
+    "revision": "ad6a506025e394ed38a5",
+    "url": "/thesis-frontend/static/js/main.7bd25dbb.chunk.js"
   },
   {
     "revision": "4545238db9043553c3e9",
