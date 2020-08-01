@@ -5,7 +5,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import { Ring } from 'react-spinners-css';
 import toWav from 'audiobuffer-to-wav';
 
-const API_PROCESS = 'https://104.199.147.226:8001/';
+const API_PROCESS = process.env.REACT_APP_SERVER;
 
 let chunks = [];
 let mediaRecorder;

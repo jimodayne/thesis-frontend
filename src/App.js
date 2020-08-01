@@ -3,7 +3,7 @@ import Nav from './Nav';
 import './css/scss/main.scss';
 // import { HashRouter, Route } from 'react-router-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Homepage from './components/Homepage';
+import Demo from './components/Demo';
 import AboutUs from './components/AboutUs';
 import AboutVDP from './components/AboutVDP';
 
@@ -15,7 +15,7 @@ const App = () => {
                 <Switch>
                     <Route exact path="/" component={AboutVDP} />
                     <Route path="/about-us" component={AboutUs} />
-                    <Route path="/demo" component={Homepage} />
+                    <Route path="/demo" component={Demo} />
                     <Route component={() => <div>404 Not found </div>} />
                 </Switch>
             </BrowserRouter>
