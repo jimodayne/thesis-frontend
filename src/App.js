@@ -15,7 +15,7 @@ const App = () => {
                 <Switch>
                     <Route exact path="/" component={AboutVDP} />
                     <Route path="/about-us" component={AboutUs} />
-                    <Route path="/demo" component={Demo} />
+                    {/* <Route path="/demo" component={Demo} /> */}
                     <Route component={() => <div>404 Not found </div>} />
                 </Switch>
             </BrowserRouter>
